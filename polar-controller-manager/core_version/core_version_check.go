@@ -18,8 +18,8 @@ package core_version
 
 import (
 	"fmt"
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	clientset "k8s.io/client-go/kubernetes"

@@ -19,7 +19,7 @@ package node_net_status
 import (
 	"encoding/json"
 	"fmt"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/wait"
 	clientset "k8s.io/client-go/kubernetes"
@@ -36,8 +36,8 @@ import (
 	clientSet "k8s.io/client-go/kubernetes"
 	"k8s.io/klog"
 
-	alicloud "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager"
-	utils "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager"
+	alicloud "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager"
+	utils "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager"
 )
 
 // NodeClientNetworkUnavailable means that client network of the node is not correctly configured.

@@ -17,7 +17,7 @@
 package service
 
 import (
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
 	"k8s.io/client-go/kubernetes"
 )
 

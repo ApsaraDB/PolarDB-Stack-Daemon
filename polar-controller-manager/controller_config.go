@@ -18,7 +18,7 @@ package alicloud
 
 import (
 	"fmt"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	"strings"
 	"time"
 

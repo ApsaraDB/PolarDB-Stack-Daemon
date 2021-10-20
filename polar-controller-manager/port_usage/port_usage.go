@@ -18,15 +18,15 @@ package timer
 
 import (
 	"fmt"
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
 	"net"
 	"os"
 	"strconv"
 	"strings"
 	"time"
 
-	utils "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager"
-	wwidutil "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	utils "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager"
+	wwidutil "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

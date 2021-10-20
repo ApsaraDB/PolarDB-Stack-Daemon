@@ -18,12 +18,12 @@ package db_log_monitor
 
 import (
 	"fmt"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	"strings"
 	"time"
 
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
-	utils "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
+	utils "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager"
 	"k8s.io/kubernetes/pkg/util/slice"
 
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"

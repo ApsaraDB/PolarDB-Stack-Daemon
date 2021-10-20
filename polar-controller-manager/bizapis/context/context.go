@@ -18,9 +18,9 @@ package context
 
 import (
 	"encoding/json"
-	base "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/model"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/errors"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	base "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/model"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/errors"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	"net/http"
 	"strconv"
 

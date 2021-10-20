@@ -18,8 +18,8 @@ package main
 
 import (
 	"fmt"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/version"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/version"
 	"k8s.io/component-base/logs"
 	"k8s.io/klog"
 	"math/rand"

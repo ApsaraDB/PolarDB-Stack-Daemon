@@ -19,11 +19,11 @@ package bizapis
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/controller"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/service"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/core_version"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/controller"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/service"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/core_version"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/klog"
 )

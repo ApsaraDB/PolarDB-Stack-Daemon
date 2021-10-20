@@ -19,8 +19,8 @@ package bizapis
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/core_version"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/core_version"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	"io/ioutil"
 	"net/http"
 	"testing"

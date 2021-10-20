@@ -18,8 +18,8 @@ package bizapis
 
 import (
 	"github.com/gin-gonic/gin"
-	gincontext "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/context"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/model"
+	gincontext "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/context"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/model"
 	"net/http"
 )
 

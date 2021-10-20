@@ -17,7 +17,7 @@
 package core_version
 
 import (
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/context"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/context"
 )
 
 // RequestCheckCoreVersion

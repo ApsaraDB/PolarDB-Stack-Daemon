@@ -18,9 +18,9 @@ package service
 
 import (
 	"fmt"
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/context"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/util"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/context"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/klog"

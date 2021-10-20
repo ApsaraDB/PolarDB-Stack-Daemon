@@ -17,7 +17,7 @@
 package options
 
 import (
-	config "gitlab.alibaba-inc.com/rds/polarstack-daemon/cmd/daemon/app/config"
+	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
 	"os"
 
 	v1 "k8s.io/api/core/v1"

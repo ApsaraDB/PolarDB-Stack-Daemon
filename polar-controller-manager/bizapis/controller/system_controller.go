@@ -18,8 +18,8 @@ package controller
 
 import (
 	"fmt"
-	gincontext "gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/context"
-	"gitlab.alibaba-inc.com/rds/polarstack-daemon/polar-controller-manager/bizapis/service"
+	gincontext "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/context"
+	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis/service"
 	"k8s.io/klog"
 )
 
