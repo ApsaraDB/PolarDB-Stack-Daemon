@@ -1,20 +1,11 @@
 # Build the manager binary
-FROM reg.docker.alibaba-inc.com/polar-gocommon/golang:1.13.10 as builder
+FROM golang:1.13.10 as builder
 
 ARG ssh_prv_key
 ARG ssh_pub_key
 
-ARG DIR=/go/src/gitlab.alibaba-inc.com/rds/polarstack-daemon
+ARG DIR=/go/src/github.com/ApsaraDB/PolarDB-Stack-Daemon
 WORKDIR $DIR
-
-# Add the keys and set permissions
-RUN mkdir -p /root/.ssh && chmod 0700 /root/.ssh
-RUN echo "$ssh_prv_key" | tr -d '\r' > /root/.ssh/id_rsa && \
-    echo "$ssh_pub_key" | tr -d '\r' > /root/.ssh/id_rsa.pub && \
-    chmod 600 /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa.pub
-
-RUN echo "Host gitlab.alibaba-inc.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 # Copy the go source
 COPY polar-controller-manager polar-controller-manager
@@ -24,8 +15,6 @@ COPY go.mod go.sum ./
 #
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn,direct
-ENV GOPRIVATE=gitlab.alibaba-inc.com
-RUN git config --global url."git@gitlab.alibaba-inc.com:".insteadOf "https://gitlab.alibaba-inc.com/"
 RUN go mod download
 
 # Build
@@ -33,7 +22,7 @@ RUN go build -o polarstack-daemon $DIR/cmd/daemon
 # Use distroless as minimal base image to package the manager binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
 #FROM centos:7.4.1708
-FROM reg.docker.alibaba-inc.com/polarbox/alpine:3.9
+FROM alpine:3.9
 LABEL maintainers="developer"
 
 
@@ -73,7 +62,7 @@ WORKDIR /bin/
 CMD [ "polarstack-daemon" ]
 
 
-COPY --from=builder /go/src/gitlab.alibaba-inc.com/rds/polarstack-daemon/polarstack-daemon /usr/local/bin/
+COPY --from=builder /go/src/github.com/ApsaraDB/PolarDB-Stack-Daemon/polarstack-daemon /usr/local/bin/
 
 #RUN chmod +x /usr/local/bin/cloudprovider
 #RUN apk add --no-cache \
