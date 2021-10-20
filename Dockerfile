@@ -1,9 +1,6 @@
 # Build the manager binary
 FROM golang:1.13.10 as builder
 
-ARG ssh_prv_key
-ARG ssh_pub_key
-
 ARG DIR=/go/src/github.com/ApsaraDB/PolarDB-Stack-Daemon
 WORKDIR $DIR
 
@@ -18,7 +15,7 @@ ENV GOPROXY=https://goproxy.cn,direct
 RUN go mod download
 
 # Build
-RUN go build -o polarstack-daemon $DIR/cmd/daemon
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o polarstack-daemon $DIR/cmd/daemon
 # Use distroless as minimal base image to package the manager binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
 #FROM centos:7.4.1708
