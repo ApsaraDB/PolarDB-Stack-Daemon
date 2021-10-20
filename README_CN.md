@@ -4,7 +4,7 @@ PolarDB Stack Daemon（下文简称为ps-daemon）是阿里云DBaaS混合云产�
 
 1. 端口扫描：定期扫描所在主机的端口占用情况，为数据库引擎以及其他组件分配端口提供基础数据。
 2. 内核镜像版本扫描：识别所在机器上内核版本的可用性，为数据库恢复和创建数据库时指定特定版本提供基础数据。
-3. 数据库日志清理：基于共享存储的一写多读数据库数据在共享存储上，数据库的日志主机的本地盘上，定期按照标准清理保持本地盘的日志是保证主机与数据库长期稳定运行的重要手段。
+3. 数据库日志清理：基于共享存储的一写多读数据库数据存储在共享存储上，数据库日志存储在主机的本地盘上，定期按照标准清理本地盘上的日志是保证主机与数据库长期稳定运行的必要措施
 4. 节点网络情况与主机情况收集：定时查询所在主机客户网网络情况，更新指定node condition，为数据库引擎、一些多读数据库代理提供连接所需的IP信息与网络状态信息。
 
 ## 分支说明
@@ -18,10 +18,10 @@ PolarDB Stack Daemon工程采用cobra.Command形式启动程序， 主要由一�
 polar-controller-manager目录主要由以下子目录组成：
 
 - port_usage目录：主要执行端口扫描，将本机上端口已占用情况汇总到configmap中；
-- core_version目录：启动扫描一次本机上内核小版本的image信息，之后根据调用再次执行内核小版本image扫描，并汇总到执行configmap；
+- core_version目录：程序启动时会扫描一次本机上内核小版本的image信息，之后根据API调用会再次执行内核小版本image扫描，并汇总到指定configmap；
 - db_log_monitor目录： 数据库引擎日志清理的代码；
 - node_net_status目录： 主要定时更新k8s node condition状态，包括NodeClientIP、NodeClientNetworkUnavailable、 NodeRefreshFlag， 其中NodeClientIP condition会存储客户网IP信息，供给数据库与cm或者代理直接通信使用；
-- bizapis目录：对外提供的restful服务，可在该目录下service中可调用其他目录对应内容；
+- bizapis目录：对外提供的restful服务，具体实现在该目下service中， servcie目录中可调用其他目录对应的实现函数；
 
 ## 快速开始
 
@@ -38,11 +38,11 @@ polar-controller-manager目录主要由以下子目录组成：
 
 **操作前提：**
 
-PolarDB Stack Daemon以k8s daemonset形式运行在每台node机器上，通过ssh在本机上执行操作命令。部署前，请确保k8s安装完毕，k8s各组件运行正常， 且所有主机之间互相已打通免密访问。
+PolarDB Stack Daemon以k8s daemonset形式运行在每台node机器上，通过ssh在本机上执行操作命令。部署前，请确保k8s安装完毕，k8s各组件运行正常， 且所有主机之间互相已打通ssh免密访问。
 
 **步骤：**
 
-1. 下载PolarDB Stack Daemon源代码，地址：http://xxxx。
+1. 下载PolarDB Stack Daemon源代码，地址： https://github.com/ApsaraDB/PolarDB-Stack-Daemon。
 2.  安装k8s，确保k8s个组件处于正常运行状态。
 3.  安装相关依赖：执行kubectl create -f all.yaml
 
