@@ -178,7 +178,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: ccm-config
-          image: reg.docker.alibaba-inc.com/polarbox/polarstack-daemon:1.8.0.polarbox.lvs-SNAPSHOT
+          image: polardb/polarstack-daemon:1.0.0
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 5

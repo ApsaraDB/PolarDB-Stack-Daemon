@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-source .gitlab-ci-variables
+export APP_NAME=polarstack-daemon
+export BUILD_VERSION=1.0.0
+export BUILD_IMAGE=polardb/${APP_NAME}
 
 ./version_hack.sh
 
-echo "docker build -t ${BUILD_IMAGE}:${BUILD_VERSION}-SNAPSHOT ."
-docker build -t "${BUILD_IMAGE}:${BUILD_VERSION}-SNAPSHOT" \
+echo "docker build -t ${BUILD_IMAGE}:${BUILD_VERSION} ."
+docker build -t "${BUILD_IMAGE}:${BUILD_VERSION}" \
     --build-arg ssh_prv_key="$(cat ~/.ssh/id_rsa)" \
     --build-arg ssh_pub_key="$(cat ~/.ssh/id_rsa.pub)" .
-
-echo "docker push ${BUILD_IMAGE}:${BUILD_VERSION}-SNAPSHOT"
-docker push "${BUILD_IMAGE}:${BUILD_VERSION}-SNAPSHOT"
