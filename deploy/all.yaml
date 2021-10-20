@@ -158,7 +158,7 @@ spec:
             - --log-file=/kube-log/polardb-net.log
             - --log-flush-frequency=2s
             - --stderrthreshold=1
-            - --dbcluster-log-dir=/disk1/polardb_ppas/
+            - --dbcluster-log-dir=/disk1/polardb/
             - --ins-folder-overdue-days=7
             - --events-enable-upload=true
             - --events-upload-url=http://rds-redline-worker-log-api.rds:8080/
