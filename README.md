@@ -38,7 +38,7 @@ PolarDB Stack Daemon runs on each node machine in the form of k8s daemonset, and
 
 Steps:
 
-1. Download PolarDB Stack Daemon source code at: http://xxxx 。
+1. Download PolarDB Stack Daemon source code at: https://github.com/ApsaraDB/PolarDB-Stack-Daemon
 2. Install k8s and ensure that k8s components are in normal operation.
 3. Install related dependencies: kubectl create -f all.yaml.
 
