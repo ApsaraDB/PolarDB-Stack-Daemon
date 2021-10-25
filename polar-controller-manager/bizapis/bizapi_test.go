@@ -1,4 +1,4 @@
-/* 
+/*
 *Copyright (c) 2019-2021, Alibaba Group Holding Limited;
 *Licensed under the Apache License, Version 2.0 (the "License");
 *you may not use this file except in compliance with the License.
@@ -13,14 +13,13 @@
 *limitations under the License.
  */
 
-
 package bizapis
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/core_version"
 	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/util"
+	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
 	"testing"

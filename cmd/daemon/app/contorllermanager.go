@@ -1,4 +1,4 @@
-/* 
+/*
 *Copyright (c) 2019-2021, Alibaba Group Holding Limited;
 *Licensed under the Apache License, Version 2.0 (the "License");
 *you may not use this file except in compliance with the License.
@@ -13,12 +13,10 @@
 *limitations under the License.
  */
 
-
 package app
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	config "github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/config"
 	"github.com/ApsaraDB/PolarDB-Stack-Daemon/cmd/daemon/app/options"
 	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/bizapis"
@@ -28,6 +26,7 @@ import (
 	"github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/node_net_status"
 	usage "github.com/ApsaraDB/PolarDB-Stack-Daemon/polar-controller-manager/port_usage"
 	cmversion "github.com/ApsaraDB/PolarDB-Stack-Daemon/version"
+	"github.com/spf13/cobra"
 	"k8s.io/apimachinery/pkg/util/wait"
 	clientset "k8s.io/client-go/kubernetes"
 	"k8s.io/component-base/cli/globalflag"
